@@ -1,6 +1,8 @@
-def calc_add(a, b):
-  print("{} + {} = ".format(str(a), str(b)), end = " ")
-  return a+b
+def calc_add(a, *args):
+  print("{} + {} = ".format(str(a), args), end = " ")
+  list_args = args[0].strip(" ").split(" ")
+  print(args)
+  return a + sum([int(i) for i in list_args])
 
 def calc_substract(a, b):
   print("{} - {} = ".format(str(a), str(b)), end = " ")
@@ -39,6 +41,6 @@ if __name__ == "__main__":
     if operation == "exit":
       break
     operation_def = check_operation_name(operation)
-    a = int(input("Podaj pierwsza liczbe: "))
-    b = int(input("Podaj druga liczbe: "))
-    print(operation_def(int(a), int(b)))
+    a = (input("Podaj pierwsza liczbe: "))
+    b = (input("Podaj druga liczbe: "))
+    print(operation_def(int(a), int(b))
