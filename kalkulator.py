@@ -1,14 +1,19 @@
 def calc_add(a, b):
+  print("{} + {} = ".format(str(a), str(b)), end = " ")
   return a+b
 
 def calc_substract(a, b):
+  print("{} - {} = ".format(str(a), str(b)), end = " ")
   return a-b
 
 def calc_multiple(a, b):
+  print("{} * {} = ".format(str(a), str(b)), end = " ")
   return a*b
 
 def calc_divide(a, b):
+  print("{} : {} = ".format(str(a), str(b)), end = " ")
   return a / b 
+
 def check_operation_name(operation):
   if operation in method_dict:
     return method_dict[operation]
@@ -25,8 +30,11 @@ method_dict = {
 
 if __name__ == "__main__":
   print("Witam w moim kalkulatorze :P")
-  operation = input("Podaj dzialanie: dodawanie, odjemowanie, mnozenie lub dzielenie: ")
-  operation_def = check_operation_name(operation)
-  a = int(input("Podaj pierwsza liczbe: "))
-  b = int(input("Podaj druga liczbe: "))
-  print(operation_def(a, b))
+  while True:
+    operation = input("Podaj dzialanie: dodawanie, odjemowanie, mnozenie lub dzielenie: ")
+    if operation == "exit":
+      break
+    operation_def = check_operation_name(operation)
+    a = int(input("Podaj pierwsza liczbe: "))
+    b = int(input("Podaj druga liczbe: "))
+    print(operation_def(int(a), int(b)))
