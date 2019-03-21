@@ -12,7 +12,11 @@ def calc_multiple(a, b):
 
 def calc_divide(a, b):
   print("{} : {} = ".format(str(a), str(b)), end = " ")
-  return a / b 
+  try:
+    return a / b 
+  except ZeroDivisionError:
+    print("Nie dziel przez ZERO!")
+    return "3 = 4"
 
 def check_operation_name(operation):
   if operation in method_dict:
